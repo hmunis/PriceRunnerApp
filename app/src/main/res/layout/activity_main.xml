@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/barcode_reader">
+
+    </ImageView>
+
+    <Button
+        android:id="@+id/buttonScan"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center"
+        android:text="SCAN BARCODE"
+        android:textColor="#000000"
+        android:textSize="16sp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/buttonPriceList"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center"
+        android:text="PRICE LIST"
+        android:textColor="#000000"
+        android:textSize="16sp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/buttonAbout"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center"
+        android:text="ABOUT"
+        android:textColor="#000000"
+        android:textSize="16sp">
+
+    </Button>
+
+</LinearLayout>
