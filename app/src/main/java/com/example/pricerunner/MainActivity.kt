@@ -2,18 +2,18 @@ package com.example.pricerunner
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.EdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.pricerunner.databinding.ActivityMainBinding
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanOptions
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private var scannedBarcode: String = ""
 
     private val barcodeLauncher = registerForActivityResult(ScanContract()) { result ->
@@ -28,30 +28,32 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         EdgeToEdge.enable(this)
-        setContentView(R.layout.activity_main)
         
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        findViewById<Button>(R.id.buttonScan).setOnClickListener {
+        binding.buttonScan.setOnClickListener {
             barcodeLauncher.launch(ScanOptions())
         }
 
-        findViewById<Button>(R.id.buttonPriceList).setOnClickListener {
+        binding.buttonPriceList.setOnClickListener {
             if (scannedBarcode.isNotEmpty()) {
                 val intent = Intent(this, PriceListActivity::class.java).apply {
                     putExtra(EXTRA_BARCODE, scannedBarcode)
                 }
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Please scan a barcode", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please scan a barcode first", Toast.LENGTH_SHORT).show()
             }
         }
 
-        findViewById<Button>(R.id.buttonAbout).setOnClickListener {
+        binding.buttonAbout.setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
         }
     }

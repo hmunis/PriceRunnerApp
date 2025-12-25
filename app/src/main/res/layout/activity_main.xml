@@ -5,59 +5,71 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_background"
+    android:background="@color/background_cream"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:padding="24dp"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/barcode_reader">
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    </ImageView>
+    <!-- App Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="serif"
+        android:text="PriceRunner"
+        android:textColor="@color/text_charcoal"
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
-    <Button
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="Compare prices instantly"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp" />
+
+    <!-- Scan Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonScan"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#FFFFFF"
-        android:gravity="center"
-        android:text="SCAN BARCODE"
-        android:textColor="#000000"
-        android:textSize="16sp">
+        style="@style/PriceRunner.Button.Outlined"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Scan Barcode"
+        app:icon="@android:drawable/ic_menu_camera"
+        app:iconGravity="textStart"
+        app:iconTint="@color/text_charcoal" />
 
-    </Button>
-
-    <Button
+    <!-- Price List Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonPriceList"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#FFFFFF"
-        android:gravity="center"
-        android:text="PRICE LIST"
-        android:textColor="#000000"
-        android:textSize="16sp">
+        style="@style/PriceRunner.Button.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="View Prices" />
 
-    </Button>
-
-    <Button
+    <!-- About Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAbout"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#FFFFFF"
-        android:gravity="center"
-        android:text="ABOUT"
-        android:textColor="#000000"
-        android:textSize="16sp">
+        style="@style/PriceRunner.Button.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About" />
 
-    </Button>
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5" />
 
 </LinearLayout>
