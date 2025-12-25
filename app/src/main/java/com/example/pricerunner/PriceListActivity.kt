@@ -3,7 +3,7 @@ package com.example.pricerunner
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.EdgeToEdge
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -27,7 +27,7 @@ class PriceListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        EdgeToEdge.enable(this)
+        enableEdgeToEdge()
         
         binding = ActivityPriceListBinding.inflate(layoutInflater)
         setContentView(binding.root)
